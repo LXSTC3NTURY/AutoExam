@@ -4,8 +4,9 @@ from config.base_urls import MOVIES_BASE_URL
 MOVIES = "/movies"
 MOVIE_BY_ID = '/movies/{id}'
 
+
 class MoviesApi(CustomRequester):
-    def __init__ (self, session):
+    def __init__(self, session):
         super().__init__(session=session, base_url=MOVIES_BASE_URL)
 
     def get_movies(self, params=None, expected_status=200, **kwargs):

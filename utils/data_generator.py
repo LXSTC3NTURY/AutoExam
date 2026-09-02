@@ -4,6 +4,7 @@ from faker import Faker
 
 faker = Faker()
 
+
 class DataGenerator:
 
     @staticmethod
@@ -47,3 +48,23 @@ class DataGenerator:
     @staticmethod
     def generate_random_name():
         return faker.name()
+
+    @staticmethod
+    def generate_movie_name():
+        return faker.sentence(nb_words=3)
+
+    @staticmethod
+    def generate_movie_description():
+        return faker.text(max_nb_chars=200)
+
+    @staticmethod
+    def generate_image_url():
+        return faker.image_url()
+
+    @staticmethod
+    def generate_location():
+        return random.choice(["MSK", "SPB"])
+
+    @staticmethod
+    def generate_genre_id():
+        return random.randint(5, 100)
