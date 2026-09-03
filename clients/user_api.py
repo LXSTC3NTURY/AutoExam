@@ -3,6 +3,7 @@ from config.base_urls import AUTH_BASE_URL
 
 USER = '/user'
 
+
 class UserApi(CustomRequester):
     def __init__(self, session):
         super().__init__(session=session, base_url=AUTH_BASE_URL)

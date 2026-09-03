@@ -3,15 +3,17 @@ import logging
 import os
 import time
 
+
 class CustomRequester:
     base_headers = {
         "Content-Type": "application/json",
         "Accept": "application/json"
     }
+
     def __init__(self, session, base_url):
         self.session = session
         self.base_url = base_url
-        self.headers = self.base_headers.copy() # делам copy чтобы не изменить base_headers
+        self.headers = self.base_headers.copy()   # делам copy чтобы не изменить base_headers
         self.session.headers.update(self.base_headers)
         self.logger = logging.getLogger(__name__)
 
@@ -36,7 +38,6 @@ class CustomRequester:
     def _reset_headers(self):
         self.session.headers.clear()
         self.session.headers.update(self.headers)
-
 
     def log_request_and_response(self, response, elapsed_ms):
         try:
